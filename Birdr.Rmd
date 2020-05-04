@@ -68,3 +68,39 @@ You can create a dot plot showing counts of recent notable birds for a specified
 get_notable_chart(region_code = "US-CA-079", ebirdkey = '1ls8sv5baidn', obs_to_plot = 25, back = 15)
 ```
 
+## Create a map of local hotspots
+
+You can create a map of local birding hotspots relevent to your location with `map_local_hotspots()`: 
+
+```{r}
+map_local_hotspots(latitude = 35.28, longitude = -120.65, key = '1ls8sv5baidn')
+```
+
+## GET a dataframe of all the bird species on eBird
+
+You can get a dataframe of all birds on eBird with `get_all_birds()`:
+
+```{r}
+get_all_birds(key = '1ls8sv5baidn') %>% 
+  head(5)
+```
+
+## GET a dataframe of all local hotspots or hotspots for a region
+
+You can get both local and regional hotspots with these two functions `get_local_hotspots()` and `get_hotspots()`:
+
+```{r}
+get_local_hotspots(35.28, -120.65, key = '1ls8sv5baidn')
+```
+```{r}
+get_hotspots("US-CA-079", key = '1ls8sv5baidn')
+```
+
+## GET a dataframe of regions 
+
+You can get a dataframe of regions (countries, state level, or county level) with `get_regions()`: 
+
+```{r}
+get_regions(region_type = "subnational2", parent_region = "US-CA", key = '1ls8sv5baidn')
+```
+
