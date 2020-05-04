@@ -13,13 +13,13 @@
 #'
 #' @importFrom httr GET add_headers
 #' @importFrom jsonlite fromJSON
-#' @importFrom leaflet makeIcon leaflet makeIcon addPolylines
+#' @importFrom leaflet makeIcon leaflet makeIcon addPolylines addMarkers
 #' @importFrom glue glue
 #'
 #' @export
 map_local_hotspots <- function(latitude, longitude, back = 1, dist = 25, iconwidth = 30, iconheight = 30, key) {
   #Get the data
-  hotspots <- get_local_hotspots(latitude, longitude, dist, back, key)
+  hotspots <- get_local_hotspots(lat = latitude, lng = longitude, dist = dist, back = back, key = key)
   #Icons
   bird_icon <- makeIcon(iconUrl = "http://www.clker.com/cliparts/b/2/a/4/1195426695650497164PeterM_Feather.svg.med.png",
                         iconWidth = iconwidth, iconHeight = iconheight)
